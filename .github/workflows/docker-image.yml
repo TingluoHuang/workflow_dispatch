@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag huangtingluo/workflow_dispatch:latest
+    
+    - name: Docker Login
+      uses: docker/login-action@v1.3.0
+      with:
+        username: huangtingluo
+        password: ${{secrets.docker_cred}}
+
+    - run: |
+       docker push huangtingluo/workflow_dispatch:latest
