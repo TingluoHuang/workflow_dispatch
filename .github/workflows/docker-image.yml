@@ -26,4 +26,4 @@ jobs:
        docker push huangtingluo/workflow_dispatch:latest
        
     - run: |
-        docker run --rm -e GITHUB_TOKEN=${{github.token}} -e GITHUB_OWNER=tingluohuang -e GITHUB_REPO=workflow_dispatch -e GITHUB_WORKFLOW=WorkflowDispatchTest -e GITHUB_WORKFLOW_INOUTS="{\"test_input\":\"test\"}" huangtingluo/workflow_dispatch:latest
+        docker run --rm -e GITHUB_TOKEN=${{github.token}} -e GITHUB_OWNER=tingluohuang -e GITHUB_REPO=workflow_dispatch -e GITHUB_WORKFLOW=test.yml -e GITHUB_WORKFLOW_INOUTS="{\"test_input\":\"test\"}" huangtingluo/workflow_dispatch:latest
