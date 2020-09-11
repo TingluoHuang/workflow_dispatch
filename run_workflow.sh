@@ -1,3 +1,8 @@
+echo $GITHUB_OWNER
+echo $GITHUB_REPO
+echo $GITHUB_WORKFLOW
+echo $GITHUB_WORKFLOW_INPUTS
+
 curl \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
