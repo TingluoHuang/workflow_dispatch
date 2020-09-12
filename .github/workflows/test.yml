@@ -19,7 +19,7 @@ jobs:
 
     steps:
        - run: |
-          echo ${{tojson(github.event)}}
+          cat $GITHUB_EVENT_PATH
           echo ================================
           echo ${{github.event.inputs.test_input}}
           echo ================================
